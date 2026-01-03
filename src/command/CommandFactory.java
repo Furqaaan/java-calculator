@@ -21,6 +21,7 @@ public class CommandFactory {
             case "-" -> new SubtractOperatorCommand(engine);
             case "x" -> new MultiplyOperatorCommand(engine);
             case "/" -> new DivideOperatorCommand(engine);
+            case "√" -> new SqrtCommand(engine);
             default -> {
                 if ("0123456789".contains(buttonText)) {
                     yield new NumberCommand(engine, buttonText);
@@ -35,7 +36,7 @@ public class CommandFactory {
         return switch (operator) {
             case "+" -> new AddCommand(engine);
             case "-" -> new SubtractCommand(engine);
-            case "*", "x" -> new MultiplyCommand(engine);
+            case "x" -> new MultiplyCommand(engine);
             case "/" -> new DivideCommand(engine);
             default -> throw new IllegalArgumentException("Invalid operator: " + operator);
         };

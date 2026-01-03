@@ -49,6 +49,7 @@ public class CalculatorEngine {
         display.clearOperatorAndSetDisplayText(result);
     }
 
+
     public void stageOperator(String operator) {
         if (context.getOperator() == null) {
             context.setA(display.getDisplayText());
@@ -59,14 +60,19 @@ public class CalculatorEngine {
         display.setDisplayText("0");
     }
 
+    public void sqrt() {
+        double result = Math.sqrt(display.getDisplayValue());
+        display.setDisplayText(result);
+    }
+
     public void negate() {
-        double value = display.getDisplayValue();
-        display.setDisplayText(-value);
+        double result = display.getDisplayValue();
+        display.setDisplayText(-result);
     }
 
     public void percentage() {
-        double value = display.getDisplayValue();
-        display.setDisplayText(value / 100);
+        double result = display.getDisplayValue();
+        display.setDisplayText(result / 100);
     }
 
     public void clear() {
