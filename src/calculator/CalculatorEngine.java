@@ -101,9 +101,6 @@ public class CalculatorEngine {
         context.setB(display.getDisplayText());
 
         if (!Double.isNaN(context.getA())) {
-            System.out.println("A: " + context.getA());
-            System.out.println("B: " + context.getB());
-
             Command command = CommandFactory.getCommand(context.getOperator(), this);
             command.execute();
         }
